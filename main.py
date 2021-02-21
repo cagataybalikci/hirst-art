@@ -16,8 +16,6 @@
 from turtle import Turtle, Screen
 import random
 
-
-
 t = Turtle()
 screen = Screen()
 screen.colormode(255)
@@ -28,22 +26,21 @@ t.speed("fast")
 screen_width = screen.window_width()
 screen_height = screen.window_height()
 color_palette = [(246, 245, 243), (234, 240, 246), (240, 246, 243), (247, 239, 243), (131, 165, 206),
-              (225, 151, 100), (32, 41, 59), (200, 134, 147), (235, 212, 87), (166, 56, 46)]
+                 (225, 151, 100), (32, 41, 59), (200, 134, 147), (235, 212, 87), (166, 56, 46)]
+
 
 def get_random_color():
     t.color((random.choice(color_palette)))
 
+
 def draw_circle(x_pos, y_pos):
-    for column in range(1,11):
-        t.setposition(-x_pos / 2, (-y_pos / 2 ) + (column * 50))
-        for row in range(1,11):
+    for column in range(1, 11):
+        t.setposition(-x_pos / 2, (-y_pos / 2) + (column * 50))
+        for row in range(1, 11):
             get_random_color()
             t.forward(50)
             t.stamp()
 
 
-
-
-draw_circle(screen_width,screen_height)
-
+draw_circle(screen_width, screen_height)
 screen.exitonclick()
